@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Keith & Nikki's Wedding</title>
+		<meta name="robots" content="index, follow, noarchive" />
+		<link rel="stylesheet" href="menu.css" type="text/css" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+
+		<!-- This includes the ImageFlow CSS and JavaScript -->
+		<link rel="stylesheet" href="imageflow.css" type="text/css" />
+		<script type="text/javascript" src="imageflow.js"></script>
+                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="submit.js"></script>
+
+	</head>
+	<body>
+              <div id="menu">
+                 <ul>
+                   <li><a class="active" href="index.html">K&N</a></li>
+                   <li><a href="wedding.html">Wedding</a></li>
+                   <li><a href="logistics.html">Logistics</a></li>
+                   <li><a href="rsvp.html">RSVP</a></li>
+                   <li style="float:right"><a href="registry.html">Registry</a></li>
+                 </ul>
+              </div>
+    <h1>RSVP to Our  Wedding</h1>
+    <div id="names">
+       <h1 class="ann">
+          <marquee behavior="scroll" direction="left">Kindly Respond by May First</marquee>
+       </h1>
+    </div>
+    
+    <div id="rsvp" style="color:blue;margin-left:30px;">
+    <p>
+       First name:<br>
+       <input type="text" id="textFirst" name="firstname"><br>
+       Last name:<br>
+       <input type="text" id="textLast" name="lastname">
+    </p>
+    <p>
+       <input type="checkbox" class = "chk" id="acceptInvite" name="accept" value="yes">
+       <label for="acceptInvite">Accept With Pleasure!</label>
+    </p>
+    <p>
+       <input type="checkbox" class = "chk" id="declineInvite" name="decline" value="no">
+       <label for="declineInvite">Decline with Regret</label>
+    </p>
+    <p>
+       <input type="checkbox" class = "chk" id="chickenInvite" name="chicken" value="yes">
+       <label for="chickenInvite">Chicken Parmesan</label>
+    </p>
+    <p>
+       <input type="checkbox" class = "chk" id="filetInvite" name="filet" value="yes">
+       <label for="filetInvite">Filet Mignon</label>
+    </p>
+    <p>
+       <input type="checkbox" class = "chk" id="vegeInvite" name="vege" value="yes">
+       <label for="vegeInvite">Vegetarian</label>
+
+    </p>
+    <p>
+      <button type="button" onclick="registerusers()">Submit</button>
+    </p>
+    </div>
+
+
+	</body>
+</html>
