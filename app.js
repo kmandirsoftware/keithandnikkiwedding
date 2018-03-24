@@ -4,6 +4,7 @@ var dateFormat = require('dateformat');
 var now = new Date();
 var date=dateFormat(now, "yyyymmdd");
 console.log(date);
+var rsvp = require("./rsvp.js");
 
 // return APIs
 function process_data(err, data,res){
@@ -19,7 +20,9 @@ app.engine('html', require('ejs').renderFile);
 app.get('/',function(req,res){
 res.render('index.html');
 });
-
+app.get('/updateinfo',function(req,res){
+   rsvp.insert(req.first,req,last,req,accept,req.mealchoice,req.email,res,process_data);
+});
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

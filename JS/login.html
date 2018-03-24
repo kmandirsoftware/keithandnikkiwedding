@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Keith & Nikki's Wedding</title>
+		<meta name="robots" content="index, follow, noarchive" />
+		<link rel="stylesheet" href="menu.css" type="text/css" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+
+                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="facebook.js"></script>
+
+	</head>
+	<body>
+              <div id="menu">
+                 <ul>
+                   <li><a href="index.html">K&N</a></li>
+                   <li><a href="wedding.html">Wedding</a></li>
+                   <li><a href="logistics.html">Logistics</a></li>
+                   <li><a href="registry.html">Registry</a></li>
+                   <li><a class="active" href="login.html">login</a></li>
+                   <li style="float:right"><a href="rsvp.html">RSVP</a></li>
+                 </ul>
+              </div>
+    <h1>Login Using Facebook!</h1>
+
+    <p>
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+    </p>
+
+	</body>
+</html>
