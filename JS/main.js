@@ -43,9 +43,15 @@ function statusChangeCallback(response) {
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
             FB.api('/me', function(response) {
+               console.log(response);
                console.log('Successful login for: ' + response.name);
-               document.getElementById('status').innerHTML =
-                  'Thanks for logging in, ' + response.name + '!';
+               console.log('relationship_status for: ' + response.relationship_status);
+            });
+            FB.api('/me?fields=relationship_status', function(response) {
+               console.log('relationship status: ' + response.relationship_status);
+            });
+            FB.api('/me/photos', function(response) {
+               console.log(response);
             });
 
         } else if (response.status === 'not_authorized') {
