@@ -1,3 +1,9 @@
+userInfo = {
+    name: "",
+    picurl: "",
+    email: ""
+};
+
 $(document).ready(function(){
 
   window.fbAsyncInit = function() {
@@ -47,11 +53,11 @@ function statusChangeCallback(response) {
                console.log('Successful login for: ' + response.name);
                console.log('relationship_status for: ' + response.relationship_status);
             });
-            FB.api('/me?fields=relationship_status', function(response) {
-               console.log('relationship status: ' + response.relationship_status);
-            });
-            FB.api('/me/photos', function(response) {
-               console.log(response);
+            FB.api('/me?fields=email,picture', function(response) {
+               console.log('email addresss: ' + response.email);
+               userInfo.email = response.email;
+               userInfo.picurl = response.picture.url;
+               updateUserStatus(userInfo);
             });
 
         } else if (response.status === 'not_authorized') {
@@ -62,6 +68,10 @@ function statusChangeCallback(response) {
         }
 }
 
+function updateUserStatus(user) {
+   console.log(user.email);
+   console.log(uer.picurl);
+});
 function checkLoginState() {
    FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
