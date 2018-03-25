@@ -56,7 +56,7 @@ function statusChangeCallback(response) {
             FB.api('/me?fields=email,picture', function(response) {
                console.log('email addresss: ' + response.email);
                userInfo.email = response.email;
-               userInfo.picurl = response.picture.url;
+               userInfo.picurl = response.picture.data.url;
                updateUserStatus(userInfo);
             });
 
