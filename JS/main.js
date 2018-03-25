@@ -42,6 +42,12 @@ function statusChangeCallback(response) {
             // and signed request each expire
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
+            FB.api('/me', function(response) {
+               console.log('Successful login for: ' + response.name);
+               document.getElementById('status').innerHTML =
+                  'Thanks for logging in, ' + response.name + '!';
+            });
+
         } else if (response.status === 'not_authorized') {
             // the user is logged in to Facebook,
             // but has not authenticated your app
