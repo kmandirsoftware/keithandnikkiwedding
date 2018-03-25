@@ -12,7 +12,7 @@ $(document).ready(function(){
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
     });
-
+    $(document).trigger('fbload'); 
   };
 
   (function(d, s, id){
@@ -26,6 +26,11 @@ $(document).ready(function(){
 
 });
 
+$(document).on(
+    'fbload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
+    function(){
+       console.log("fbload ran");
+});
 
 function statusChangeCallback(response) {
    console.log(response);
@@ -45,3 +50,10 @@ function statusChangeCallback(response) {
         }
 }
 
+function checkLoginState() {
+   FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+   });
+}
+
+//FB.AppEvents.logEvent("sentFriendRequest");
