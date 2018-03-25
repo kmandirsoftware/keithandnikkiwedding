@@ -70,7 +70,10 @@ function statusChangeCallback(response) {
 
 function updateUserStatus(user) {
    console.log(user.email);
-   console.log(uer.picurl);
+   console.log(user.picurl);
+   var img = document.createElement("IMG");
+   img.src = user.picurl;
+   $('#facebookbutton').html(img);
 });
 function checkLoginState() {
    FB.getLoginStatus(function(response) {
