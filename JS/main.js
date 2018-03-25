@@ -14,7 +14,6 @@ $(document).ready(function(){
          version: 'v2.12' 
        });     
        $('#loginbutton,#feedbutton').removeAttr('disabled');
-       FB.getLoginStatus(updateStatusCallback);
        FB.AppEvents.logPageView();   
        FB.getLoginStatus(function(response) {
           statusChangeCallback(response);
