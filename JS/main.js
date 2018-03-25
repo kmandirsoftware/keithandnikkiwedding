@@ -5,21 +5,22 @@ userInfo = {
 };
 
 $(document).ready(function(){
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '421844468260973',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.12'
-    });
-      
-    FB.AppEvents.logPageView();   
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-    $(document).trigger('fbload'); 
-  };
+   $.ajaxSetup({ cache: true });
+   $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+       FB.init({
+         appId: '421844468260973',
+         cookie     : true,
+         xfbml      : true,
+         version: 'v2.12' 
+       });     
+       $('#loginbutton,#feedbutton').removeAttr('disabled');
+       FB.getLoginStatus(updateStatusCallback);
+       FB.AppEvents.logPageView();   
+       FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+       });
+       $(document).trigger('fbload'); 
+       });
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
