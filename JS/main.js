@@ -74,7 +74,7 @@ function updateUserStatus(user) {
    var img = document.createElement("IMG");
    img.src = user.picurl;
    $('#facebookbutton').html(img);
-});
+};
 function checkLoginState() {
    FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
